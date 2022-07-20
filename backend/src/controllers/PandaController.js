@@ -1,4 +1,5 @@
 const models = require("../models");
+const calculateMatch = require("../services/calculateMatch");
 
 class PandaController {
   static browse = (req, res) => {
@@ -34,6 +35,19 @@ class PandaController {
         } else {
           res.send(rows[0]);
         }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static findpartners = (req, res) => {
+    models.panda
+      .findPartnersById(req.params.id)
+      .then(([rows]) => {
+        const result = calculateMatch(rows, req.params.id);
+        res.send(result);
       })
       .catch((err) => {
         console.error(err);

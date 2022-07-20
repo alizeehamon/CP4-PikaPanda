@@ -5,6 +5,12 @@
   padding: 2rem;
 }
 
+.panda-match-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .section-panda-details {
   width: 50%;
   border-right: thick solid var(--light-orange);

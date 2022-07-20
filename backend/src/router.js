@@ -9,6 +9,7 @@ const {
 const router = express.Router();
 
 router.get("/pandas", PandaController.browse);
+router.get("/partners/:id", PandaController.findpartners);
 router.get("/pandas/:id", PandaController.read);
 router.put("/pandas/:id", PandaController.edit);
 router.post("/pandas", PandaController.add);

@@ -42,6 +42,17 @@ export default function PlantDetail() {
             <strong>Disponible ? </strong>
             {panda.available === 1 ? "Oui" : "Non"}
           </li>
+          <li>
+            <a
+              style={{ color: "#e47104", padding: "7vw" }}
+              href={panda.id_father}
+            >
+              {panda.id_father ? "Voir le père" : ""}
+            </a>
+            <a style={{ color: "#e47104" }} href={panda.id_mother}>
+              {panda.id_father ? "Voir la mère" : ""}
+            </a>
+          </li>
         </ul>
       </div>
     </div>

@@ -99,6 +99,10 @@ h4 {
   border-radius: 2px;
 }
 
+.seeparents a:link {
+  color: red;
+}
+
 /*  media queries*/
 
 @media screen and (max-width: 768px) {

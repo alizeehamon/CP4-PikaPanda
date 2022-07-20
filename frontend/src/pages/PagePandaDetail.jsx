@@ -1,4 +1,6 @@
 import PandaDetail from "@components/PandaDetail";
+import PandaMatch from "@components/PandaMatch";
+import ScrollToTop from "@components/ScrollToTop";
 import "../styles/PagePandaDetail.css";
 
 function PagePandaDetail() {
@@ -10,7 +12,9 @@ function PagePandaDetail() {
       </div>
       <div className="section-potential-match">
         <h1>Mes matchs potentiels</h1>
+        <PandaMatch />
       </div>
+      <ScrollToTop />
     </div>
   );
 }
