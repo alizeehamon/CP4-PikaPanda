@@ -1,20 +1,32 @@
 const models = require("../models");
 
-class ItemController {
+class PandaController {
   static browse = (req, res) => {
-    models.item
-      .findAll()
-      .then(([rows]) => {
-        res.send(rows);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
+    if (req.query.gender) {
+      models.panda
+        .findByGender(req.query.gender)
+        .then(([rows]) => {
+          res.send(rows);
+        })
+        .catch((err) => {
+          console.error(err);
+          res.sendStatus(500);
+        });
+    } else {
+      models.panda
+        .findAll()
+        .then(([rows]) => {
+          res.send(rows);
+        })
+        .catch((err) => {
+          console.error(err);
+          res.sendStatus(500);
+        });
+    }
   };
 
   static read = (req, res) => {
-    models.item
+    models.panda
       .find(req.params.id)
       .then(([rows]) => {
         if (rows[0] == null) {
@@ -30,14 +42,14 @@ class ItemController {
   };
 
   static edit = (req, res) => {
-    const item = req.body;
+    const panda = req.body;
 
     // TODO validations (length, format...)
 
-    item.id = parseInt(req.params.id, 10);
+    panda.id = parseInt(req.params.id, 10);
 
-    models.item
-      .update(item)
+    models.panda
+      .update(panda)
       .then(([result]) => {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
@@ -52,14 +64,17 @@ class ItemController {
   };
 
   static add = (req, res) => {
-    const item = req.body;
+    const panda = req.body;
 
     // TODO validations (length, format...)
 
-    models.item
-      .insert(item)
+    models.panda
+      .insert(panda)
       .then(([result]) => {
-        res.status(201).send({ ...item, id: result.insertId });
+        panda.id = result.insertId;
+        models.panda.insertAscendance(panda).then(() => {
+          res.status(201).send({ ...panda, id: result.insertId });
+        });
       })
       .catch((err) => {
         console.error(err);
@@ -80,4 +95,4 @@ class ItemController {
   };
 }
 
-module.exports = ItemController;
+module.exports = PandaController;

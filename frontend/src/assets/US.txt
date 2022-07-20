@@ -1,0 +1,7 @@
+Ajouter un panda
+Afficher la liste des pandas 
+Afficher le détail d'un panda
+Afficher les partenaires potentiels d'un panda
+Rendre un panda indisponible
+Filtrer les pandas selon un critère
+Ajouter l'authentification du site
