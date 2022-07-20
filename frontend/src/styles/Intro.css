@@ -11,6 +11,10 @@
   width: 20vw;
 }
 
+.desc-presa{
+  font-family: var(--text-font);
+}
+
 .intro-title {
   font-size: 2rem;
   color: var(--dark-orange);
@@ -35,7 +39,8 @@
   .subtitle-presa {
     display: none;
   }
-  p {
+  
+  .desc-presa {
     display: none;
   }
 }

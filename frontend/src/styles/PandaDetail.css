@@ -1,0 +1,125 @@
+  h3 {
+    font-size: 1.5rem;  
+    font-family: var(--title-font);
+    color: var(--dark-orange);
+    text-align: center;
+    margin: 0;
+  }
+  
+  h4 {
+    width: 93%;
+    margin: 0;
+    background: linear-gradient(to right, #fbc64e 10%, #eb8d1c);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;   
+  }
+
+  #main-wrapper {
+    width: 90%;
+    margin: auto;
+  }
+  
+  .section-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /*  panda-detail styles */
+  #panda-detail {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    background-color: #fafafa;
+    align-items: center;
+    border-radius: 10px;
+    height: auto;
+    width: 40vw;
+    box-shadow: #3f404165 1px 1px 10px;
+  }
+  
+  /*  image container inside each panda-detail  */
+  .wrap-image {
+    background: linear-gradient(to right, #fbc64e 10%, #eb8d1c);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .wrap-image a {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color:#3f4041;
+    padding: 5px 15px;
+  }
+  
+  .wrap-image a:hover {
+    background-color: #fafafa;  
+    border-radius: 10px;
+  }
+  
+  /* image specific */
+  #panda-detail img {
+    display: block;
+    text-align: center;
+    width: 30vw;
+    height: auto;  
+    margin: 20px;
+    border-radius: 10px;  
+  }
+  
+  /* text section on the right hand side of each panda-detail */
+  
+  .description {
+    width: 100%;
+    padding-left: 20px; 
+    padding-top: 20px; 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .description p {
+    padding: 20px;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+  
+  .description>div {
+    width: 95%;
+    height: 5px;
+    background-color: var(--light-orange);
+    margin-top: 3px;
+    border-radius: 2px;
+  }
+  
+  
+  /*  media queries*/
+  
+  @media screen and (max-width:768px) {
+    #panda-detail {
+      width: 80vw;
+      margin: auto;
+      margin-top: 1rem;
+      padding: 0;
+    }
+
+    #panda-detail img {
+      width: 70vw;
+    }
+
+    h3 {
+      font-size: 2rem;  
+    }
+
+    h4 {
+      width: 85%;
+    }
+    
+  }

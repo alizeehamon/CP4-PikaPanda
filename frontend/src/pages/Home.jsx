@@ -2,6 +2,7 @@ import "../styles/Home.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import PandaCard from "@components/PandaCard";
+import ScrollToTop from "@components/ScrollToTop";
 import { Link } from "react-router-dom";
 import Intro from "@components/Intro";
 
@@ -51,6 +52,7 @@ export default function Home() {
                   </Link>
                 </li>
               ))}
+          <ScrollToTop />
         </div>
       </div>
     </>

@@ -58,6 +58,7 @@
   font-family: "Koulen", cursive;
   padding-left: 5px;
   font-size: 2rem;
+  color: var(--white);
 }
 
 .nav-logo {
