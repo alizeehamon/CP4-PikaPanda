@@ -1,13 +1,15 @@
 const express = require("express");
 
-const { ItemController } = require("./controllers");
+const { PandaController, ZooController } = require("./controllers");
 
 const router = express.Router();
 
-router.get("/items", ItemController.browse);
-router.get("/items/:id", ItemController.read);
-router.put("/items/:id", ItemController.edit);
-router.post("/items", ItemController.add);
-router.delete("/items/:id", ItemController.delete);
+router.get("/pandas", PandaController.browse);
+router.get("/pandas/:id", PandaController.read);
+router.put("/pandas/:id", PandaController.edit);
+router.post("/pandas", PandaController.add);
+router.delete("/pandas/:id", PandaController.delete);
+
+router.get("/zoos", ZooController.browse);
 
 module.exports = router;
