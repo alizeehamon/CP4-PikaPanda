@@ -7,6 +7,8 @@ export default function PlantDetail() {
   const { id } = useParams();
   const [panda, setPanda] = useState([]);
 
+  const date = new Date(panda.birth_date).toLocaleDateString();
+
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/pandas/${id}`)
       .then((response) => response.json())
@@ -26,11 +28,11 @@ export default function PlantDetail() {
         <ul>
           <li>
             <strong>Date de naissance: </strong>
-            {panda.birth_date}
+            {date}
           </li>
           <li>
             <strong>Sexe: </strong>
-            {panda.gender}
+            {panda.gender === "M" ? "Mâle" : "Femelle"}
           </li>
           <li>
             <strong>Mon zoo: </strong>
@@ -38,7 +40,7 @@ export default function PlantDetail() {
           </li>
           <li>
             <strong>Disponible ? </strong>
-            {panda.available}
+            {panda.available === 1 ? "Oui" : "Non"}
           </li>
         </ul>
       </div>

@@ -5,7 +5,7 @@ function PagePandaDetail() {
   return (
     <div className="card-panda">
       <div className="section-panda-details">
-        <h1>En savoir plus sur mon panda</h1>
+        <h1>En savoir plus sur ce panda</h1>
         <PandaDetail />
       </div>
       <div className="section-potential-match">

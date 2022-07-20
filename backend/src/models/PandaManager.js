@@ -9,6 +9,13 @@ class PandaManager extends AbstractManager {
     );
   }
 
+  findPandaInfos(id) {
+    return this.connection.query(
+      `select panda.id, panda.name AS name, birth_date, panda.id_zoo, zoo.name AS zoo, zoo.city AS city, description, gender, image, available from  ${this.table} JOIN zoo ON zoo.id = id_zoo where panda.id = ?`,
+      [id]
+    );
+  }
+
   insert(panda) {
     return this.connection.query(
       `insert into ${PandaManager.table} (name, birth_date, gender, id_zoo, description, image) values (?, ?, ?, ?, ?, ?)`,

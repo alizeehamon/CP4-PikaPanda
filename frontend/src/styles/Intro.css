@@ -11,7 +11,7 @@
   width: 20vw;
 }
 
-.desc-presa{
+.desc-presa {
   font-family: var(--text-font);
 }
 
@@ -39,7 +39,7 @@
   .subtitle-presa {
     display: none;
   }
-  
+
   .desc-presa {
     display: none;
   }

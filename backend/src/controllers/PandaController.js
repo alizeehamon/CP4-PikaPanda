@@ -27,7 +27,7 @@ class PandaController {
 
   static read = (req, res) => {
     models.panda
-      .find(req.params.id)
+      .findPandaInfos(req.params.id)
       .then(([rows]) => {
         if (rows[0] == null) {
           res.sendStatus(404);

@@ -16,10 +16,11 @@ body {
 .c-card__header {
   margin: 0;
   -webkit-clip-path: polygon(0 40px, 100% 20px, 100% 100px, 0 120px);
-          clip-path: polygon(0 40px, 100% 20px, 100% 100px, 0 120px);
+  clip-path: polygon(0 40px, 100% 20px, 100% 100px, 0 120px);
   transition: -webkit-clip-path 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
   transition: clip-path 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
-  transition: clip-path 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s, -webkit-clip-path 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+  transition: clip-path 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s,
+    -webkit-clip-path 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
   overflow: hidden;
   max-height: 135px;
 }
@@ -36,7 +37,7 @@ body {
 }
 .c-card__header:hover {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 115px, 0 135px);
-          clip-path: polygon(0 0, 100% 0, 100% 115px, 0 135px);
+  clip-path: polygon(0 0, 100% 0, 100% 115px, 0 135px);
 }
 .c-card__header:hover::before {
   opacity: 0.45;
@@ -45,7 +46,7 @@ body {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .c-card__body {
   margin-top: -5px;
@@ -55,7 +56,7 @@ body {
   position: relative;
   margin-top: -5px;
   -webkit-clip-path: polygon(0 10px, 100% 20px, 100% 115px, 0 135px);
-          clip-path: polygon(0 10px, 100% 20px, 100% 115px, 0 135px);
+  clip-path: polygon(0 10px, 100% 20px, 100% 115px, 0 135px);
   padding-top: 15px;
 }
 .c-card__footer:before {
@@ -106,4 +107,4 @@ body {
   background: transparent;
   outline: 0;
   cursor: pointer;
-}/*# sourceMappingURL=PandaCard.css.map */
+} /*# sourceMappingURL=PandaCard.css.map */

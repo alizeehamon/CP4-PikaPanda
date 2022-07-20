@@ -1,6 +1,10 @@
 const express = require("express");
 
-const { PandaController, ZooController } = require("./controllers");
+const {
+  PandaController,
+  ZooController,
+  UserController,
+} = require("./controllers");
 
 const router = express.Router();
 
@@ -11,5 +15,8 @@ router.post("/pandas", PandaController.add);
 router.delete("/pandas/:id", PandaController.delete);
 
 router.get("/zoos", ZooController.browse);
+
+router.post("/register", UserController.register);
+router.post("/login", UserController.login);
 
 module.exports = router;
