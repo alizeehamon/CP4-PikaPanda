@@ -25,7 +25,7 @@ export default function PlantDetail() {
           <h3>{panda.name}</h3>
           <div />
           <p>{panda.description}</p>
-          <h4>A little more about {panda.name}</h4>
+          <h4>Plus d'infos sur {panda.name}</h4>
           <ul>
             <li>
               <strong>Date de naissance: </strong>

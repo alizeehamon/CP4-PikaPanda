@@ -8,7 +8,7 @@ function calculateMatch(pandas, idPanda) {
   pandas.forEach((panda) => {
     panda.score = 100;
     if (panda.available === 0) {
-      panda.score -= 50;
+      panda.score -= 100;
     }
     // Cas du demi frère ou soeur
     if (
@@ -43,6 +43,9 @@ function calculateMatch(pandas, idPanda) {
       myPanda.birth_date.getTime() - panda.birth_date.getTime();
     const totalDays = Math.abs(Math.ceil(difference / (1000 * 3600 * 24)));
     panda.score -= totalDays / 100;
+    if (panda.score < 0) {
+      panda.score = 0;
+    }
   });
   pandas = pandas.sort((a, b) => (a.score > b.score ? -1 : 1));
   pandas = pandas.slice(0, 6);
