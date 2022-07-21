@@ -73,6 +73,33 @@
   width: 80px;
 }
 
+.svg-icons {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: white;
+}
+
+.svg-icons:hover {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: black;
+}
+
+.button-nav {
+  color: var(--dark-orange);
+  border: none;
+  background-color: var(--dark-orange);
+  padding-bottom: 1.6rem;
+  width: 2rem;
+  height: 100%;
+}
+
+.button-nav:hover {
+  color: var(--light-orange);
+  border: none;
+  background-color: var(--light-orange);
+}
+
 @media screen and (max-width: 768px) {
   .nav-title {
     display: none;
@@ -83,5 +110,10 @@
   }
   .nav a {
     font-size: 0.7rem;
+  }
+
+  .nav nav ul li {
+    cursor: pointer;
+    padding: 0 5px;
   }
 }

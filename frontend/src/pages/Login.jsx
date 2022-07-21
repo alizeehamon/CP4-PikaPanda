@@ -1,48 +1,42 @@
-import { useState, useContext } from "react";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import Swal from "sweetalert2";
-import axios from "axios";
-import LoginContext from "../contexts/LoginContext";
 import "../styles/Login.css";
 import imageconnexionlogo from "../assets/logo.png";
 
-function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const { setIsConnected } = useContext(LoginContext);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (email && password) {
-      axios
-        .post(`${import.meta.env.VITE_BACKEND_URL}/login`, {
-          email,
-          password,
-        })
-        .then(() => {
-          setIsConnected(true);
-        })
-        .catch(() => {
-          Swal.fire({
-            title: "Oups!",
-            text: "Tes identifiants sont invalides",
-            imageUrl: "https://zupimages.net/up/22/29/7vzy.png",
-            imageWidth: 300,
-            imageHeight: 300,
-            imageAlt: "Sad panda",
-            confirmButtonColor: "#fbc64e",
-          });
-        });
-    } else {
+async function loginUser(credentials) {
+  return fetch(`${import.meta.env.VITE_BACKEND_URL}/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(credentials),
+  }).then((data) =>
+    data.json().catch(() =>
       Swal.fire({
         title: "Oups!",
-        text: "Une erreur est survenue",
+        text: "Tes identifiants sont invalides",
         imageUrl: "https://zupimages.net/up/22/29/7vzy.png",
         imageWidth: 300,
         imageHeight: 300,
         imageAlt: "Sad panda",
         confirmButtonColor: "#fbc64e",
-      });
-    }
+      })
+    )
+  );
+}
+
+function Login({ setToken }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const token = await loginUser({
+      email,
+      password,
+    });
+    setToken(token);
   };
 
   return (

@@ -1,6 +1,7 @@
 import "../styles/Navigation.css";
 import { Link } from "react-router-dom";
 import logo from "@assets/logo.png";
+import { RiLogoutCircleRLine } from "react-icons/ri";
 
 function Navigation() {
   return (
@@ -13,6 +14,18 @@ function Navigation() {
           </li>
           <li>
             <Link to="/pandas/add">Ajouter un panda roux</Link>
+          </li>
+          <li>
+            <button
+              type="button"
+              className="button-nav"
+              onClick={() => {
+                localStorage.clear();
+                window.location.href = "/";
+              }}
+            >
+              <RiLogoutCircleRLine className="svg-icons" />
+            </button>
           </li>
         </ul>
       </nav>

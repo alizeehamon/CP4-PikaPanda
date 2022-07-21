@@ -26,6 +26,7 @@ CREATE TABLE `user` (
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+INSERT INTO `user` (email, password, role) VALUES ("alizee.hamon@laposte.net", "admin", "ROLE_ADMIN");
 CREATE TABLE `zoo` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,

@@ -38,7 +38,7 @@
   border: 1px solid var(--light-orange);
   width: 30vw;
   font-size: 1rem;
-  height: 3vw;
+  height: 5vh;
   margin-left: 28vw;
   margin-top: 1vw;
 }
@@ -48,4 +48,21 @@
   font-size: 1rem;
   border: 3px solid var(--light-orange);
   outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .input {
+    width: 50vw;
+    font-size: 1rem;
+    height: 5vh;
+    margin-left: -1vw;
+    margin-top: 1vw;
+  }
+
+  .input:focus {
+    font-family: var(--text-font);
+    font-size: 1rem;
+    border: 3px solid var(--light-orange);
+    outline: none;
+  }
 }
