@@ -16,7 +16,6 @@ export default function AddPanda() {
   const [mother, setMother] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
-  const [available, setAvailable] = useState("");
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/zoos`)
@@ -48,7 +47,6 @@ export default function AddPanda() {
       mother,
       description,
       image,
-      available,
     };
 
     const requestOptions = {
@@ -212,20 +210,6 @@ export default function AddPanda() {
             value={image}
             onChange={(e) => setImage(e.target.value)}
           />
-        </label>
-
-        <label className="pandaadd_label" htmlFor="available" required>
-          Panda disponible
-          <select
-            className="pandaadd_input"
-            name="available"
-            id="available"
-            value={available}
-            onChange={(e) => setAvailable(e.target.value)}
-          >
-            <option value="1">Oui</option>
-            <option value="2">Non </option>
-          </select>
         </label>
 
         <button className="button" type="submit">

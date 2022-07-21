@@ -7,6 +7,9 @@ function calculateMatch(pandas, idPanda) {
   pandas = pandas.filter((panda) => panda.id != idPanda);
   pandas.forEach((panda) => {
     panda.score = 100;
+    if (panda.available === 0) {
+      panda.score -= 50;
+    }
     // Cas du demi frère ou soeur
     if (
       panda.id_mother === myPanda.id_mother &&

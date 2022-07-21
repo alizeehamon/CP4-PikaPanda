@@ -18,7 +18,7 @@ class PandaManager extends AbstractManager {
 
   insert(panda) {
     return this.connection.query(
-      `insert into ${PandaManager.table} (name, birth_date, gender, id_zoo, description, image, available) values (?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${PandaManager.table} (name, birth_date, gender, id_zoo, description, image) values (?, ?, ?, ?, ?, ?)`,
       [
         panda.name,
         panda.birthdate,
@@ -26,7 +26,6 @@ class PandaManager extends AbstractManager {
         panda.zoo,
         panda.description,
         panda.image,
-        panda.available,
       ]
     );
   }
