@@ -11,7 +11,7 @@ function PagePandaDetail() {
         <PandaDetail />
       </div>
       <div className="section-potential-match">
-        <h1>Mes matchs potentiels</h1>
+        <h1>Ses matchs potentiels</h1>
         <PandaMatch />
       </div>
       <ScrollToTop />

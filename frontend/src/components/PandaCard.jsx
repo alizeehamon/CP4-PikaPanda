@@ -14,7 +14,9 @@ export default function PandaCard({ panda }) {
           {name} - {gender}
         </h2>
         <p className="c-content">{description}</p>
-        <p className="score">{score ? `Matching score: ${score}` : null}</p>
+        <p className="score">
+          {score ? `Matching score: ${score.toFixed(2)}` : null}
+        </p>
       </div>
       <div className="c-card__footer">
         <button type="button" className="c-button">

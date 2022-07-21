@@ -6,6 +6,7 @@ import AddPanda from "@pages/AddPanda";
 import PagePandaDetail from "@pages/PagePandaDetail";
 import Navigation from "@components/Navigation";
 import Login from "@pages/Login";
+import ModifyPanda from "@pages/ModifyPanda";
 import LoginContext from "./contexts/LoginContext";
 import "./App.css";
 
@@ -21,6 +22,7 @@ function App() {
               <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/pandas/add" element={<AddPanda />} />
+                <Route path="/pandas/modify/:id" element={<ModifyPanda />} />
                 <Route path="/pandas/:id" element={<PagePandaDetail />} />
               </Routes>
             </>

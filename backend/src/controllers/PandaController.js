@@ -57,9 +57,6 @@ class PandaController {
 
   static edit = (req, res) => {
     const panda = req.body;
-
-    // TODO validations (length, format...)
-
     panda.id = parseInt(req.params.id, 10);
 
     models.panda
@@ -97,7 +94,7 @@ class PandaController {
   };
 
   static delete = (req, res) => {
-    models.item
+    models.panda
       .delete(req.params.id)
       .then(() => {
         res.sendStatus(204);

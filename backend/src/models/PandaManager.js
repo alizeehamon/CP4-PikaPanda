@@ -18,7 +18,7 @@ class PandaManager extends AbstractManager {
 
   insert(panda) {
     return this.connection.query(
-      `insert into ${PandaManager.table} (name, birth_date, gender, id_zoo, description, image) values (?, ?, ?, ?, ?, ?)`,
+      `insert into ${PandaManager.table} (name, birth_date, gender, id_zoo, description, image, available) values (?, ?, ?, ?, ?, ?, ?)`,
       [
         panda.name,
         panda.birthdate,
@@ -26,14 +26,23 @@ class PandaManager extends AbstractManager {
         panda.zoo,
         panda.description,
         panda.image,
+        panda.available,
       ]
     );
   }
 
   update(panda) {
     return this.connection.query(
-      `update ${PandaManager.table} set title = ? where id = ?`,
-      [panda.title, panda.id]
+      `update ${PandaManager.table} set name = ?, gender = ?, id_zoo = ?, description = ?, image = ?, available = ? where id = ?`,
+      [
+        panda.name,
+        panda.gender,
+        parseInt(panda.idZoo, 10),
+        panda.description,
+        panda.image,
+        parseInt(panda.available, 10),
+        panda.idPanda,
+      ]
     );
   }
 

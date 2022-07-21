@@ -15,6 +15,10 @@ h4 {
   text-align: center;
 }
 
+hr {
+  visibility: hidden;
+}
+
 #main-wrapper {
   width: 90%;
   margin: auto;
@@ -74,6 +78,26 @@ h4 {
   border-radius: 10px;
 }
 
+.button-redirect-modify {
+  font-family: var(--title-font);
+  background-color: var(--dark-orange);
+  padding: 20px;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  font-size: 1.7rem;
+  border-radius: 10px;
+  margin-left: 13vw;
+  transition: background-color 200ms ease, box-shadow 200ms ease;
+}
+
+.button-redirect-modify:hover {
+  background-color: var(--light-orange);
+  box-shadow: 3px 3px 3px var(--basic-orange);
+}
+
 /* text section on the right hand side of each panda-detail */
 
 .description {
@@ -123,5 +147,21 @@ h4 {
 
   h4 {
     width: 85%;
+  }
+
+  .button-redirect-modify {
+    margin-top: 1rem;
+  }
+
+  hr {
+    visibility: visible;
+    background-color: var(--light-orange);
+    border: none;
+    height: 0.3rem;
+    margin-top: 1rem;
+  }
+
+  ul {
+    padding-inline-start: 0.5rem;
   }
 }

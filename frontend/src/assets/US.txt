@@ -1,7 +1,7 @@
-Ajouter un panda
-Afficher la liste des pandas 
-Afficher le détail d'un panda
-Afficher les partenaires potentiels d'un panda
-Rendre un panda indisponible
+Ajouter un panda - FAIT
+Afficher la liste des pandas - FAIT
+Afficher le détail d'un panda - FAIT
+Afficher les partenaires potentiels d'un panda - FAIT
+Modifier un panda
 Filtrer les pandas selon un critère
-Ajouter l'authentification du site
+Ajouter l'authentification du site - FAIT
