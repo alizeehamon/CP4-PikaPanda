@@ -13,13 +13,13 @@ function Intro() {
           roux!
         </h1>
         <h2 className="subtitle-presa">C'est quoi le programme ?</h2>
-        <p>
+        <p className="desc-presa">
           Au menu du jour, une liste de tous les pandas roux des zoos de la
           région. Le but? Pouvoir matcher des pandas de tous horizons pour
           pérenniser l'espèce...
         </p>
         <h2 className="subtitle-presa">Mais... Pourquoi ?</h2>
-        <p>
+        <p className="desc-presa">
           Tu l'as peut être oublié mais tous les jours, l'Homme détruit des
           hectares de forêts et malheureusement, pour nos amis à quatre pattes,
           ce sont leurs habitats qui disparaissent. Sans maison, le panda ne

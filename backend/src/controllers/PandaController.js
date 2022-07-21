@@ -1,4 +1,5 @@
 const models = require("../models");
+const calculateMatch = require("../services/calculateMatch");
 
 class PandaController {
   static browse = (req, res) => {
@@ -27,7 +28,7 @@ class PandaController {
 
   static read = (req, res) => {
     models.panda
-      .find(req.params.id)
+      .findPandaInfos(req.params.id)
       .then(([rows]) => {
         if (rows[0] == null) {
           res.sendStatus(404);
@@ -41,11 +42,21 @@ class PandaController {
       });
   };
 
+  static findpartners = (req, res) => {
+    models.panda
+      .findPartnersById(req.params.id)
+      .then(([rows]) => {
+        const result = calculateMatch(rows, req.params.id);
+        res.send(result);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static edit = (req, res) => {
     const panda = req.body;
-
-    // TODO validations (length, format...)
-
     panda.id = parseInt(req.params.id, 10);
 
     models.panda
@@ -83,7 +94,7 @@ class PandaController {
   };
 
   static delete = (req, res) => {
-    models.item
+    models.panda
       .delete(req.params.id)
       .then(() => {
         res.sendStatus(204);

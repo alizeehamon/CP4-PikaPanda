@@ -1,3 +1,4 @@
+-- Active: 1654606242208@@127.0.0.1@3306@pikapanda
 DROP DATABASE IF EXISTS `pikapanda`;
 
 CREATE DATABASE `pikapanda`
@@ -16,6 +17,16 @@ CREATE TABLE `panda` (
   `image` varchar(255) DEFAULT ""
 ) DEFAULT CHARACTER SET = 'utf8';
 
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('ROLE_ADMIN','ROLE_USER') NOT NULL DEFAULT 'ROLE_USER',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `user` (email, password, role) VALUES ("alizee.hamon@laposte.net", "admin", "ROLE_ADMIN");
 CREATE TABLE `zoo` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -36,7 +47,6 @@ ALTER TABLE `ascendance` ADD FOREIGN KEY (`id_mother`) REFERENCES `panda` (`id`)
 ALTER TABLE `ascendance` ADD FOREIGN KEY (`id_father`) REFERENCES `panda` (`id`);
 
 INSERT INTO `zoo` (name, city) VALUES ('Beauval', 'Saint-Aignan'),('La Boissière du doré', 'La Boissière du doré'), ('Branféré', 'Le Guerno'), ('Ménagerie du Jardin des Plantes', 'Paris'), ('Zoo d\'Amnéville', 'Amnéville'), ('Zoo de la Flèche', 'La Flèche');
-
 
 INSERT INTO `panda` (name, birth_date, gender, id_zoo, description, image) VALUES
   ("Rookie",'2012-01-01','M',1,'Tout roux tout doux', "https://images.pexels.com/photos/2265247/pexels-photo-2265247.jpeg"),

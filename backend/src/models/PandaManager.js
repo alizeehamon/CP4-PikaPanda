@@ -9,6 +9,13 @@ class PandaManager extends AbstractManager {
     );
   }
 
+  findPandaInfos(id) {
+    return this.connection.query(
+      `select panda.id, panda.name AS name, birth_date, panda.id_zoo, zoo.name AS zoo, zoo.city AS city, description, gender, image, available, id_father, id_mother from  ${this.table} LEFT JOIN ascendance ON id_child = panda.id JOIN zoo ON zoo.id = id_zoo where panda.id = ?`,
+      [id]
+    );
+  }
+
   insert(panda) {
     return this.connection.query(
       `insert into ${PandaManager.table} (name, birth_date, gender, id_zoo, description, image) values (?, ?, ?, ?, ?, ?)`,
@@ -25,8 +32,16 @@ class PandaManager extends AbstractManager {
 
   update(panda) {
     return this.connection.query(
-      `update ${PandaManager.table} set title = ? where id = ?`,
-      [panda.title, panda.id]
+      `update ${PandaManager.table} set name = ?, gender = ?, id_zoo = ?, description = ?, image = ?, available = ? where id = ?`,
+      [
+        panda.name,
+        panda.gender,
+        parseInt(panda.idZoo, 10),
+        panda.description,
+        panda.image,
+        parseInt(panda.available, 10),
+        panda.idPanda,
+      ]
     );
   }
 
@@ -52,6 +67,13 @@ class PandaManager extends AbstractManager {
     return this.connection.query(
       `insert into ascendance (id_child) values (?)`,
       [panda.id]
+    );
+  }
+
+  findPartnersById(id) {
+    return this.connection.query(
+      `select panda.id, panda.name AS name, birth_date, panda.id_zoo, zoo.name AS zoo, zoo.city AS city, description, gender, image, available, id_mother, id_father from  ${this.table} JOIN zoo ON zoo.id = id_zoo LEFT JOIN ascendance on ascendance.id_child = panda.id where panda.id = ${id} OR panda.gender != (select gender from ${this.table} where id = ?)`,
+      [id]
     );
   }
 }

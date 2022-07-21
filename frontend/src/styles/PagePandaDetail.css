@@ -1,0 +1,35 @@
+.card-panda {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.panda-match-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.section-panda-details {
+  width: 50%;
+  border-right: thick solid var(--light-orange);
+}
+
+.section-potential-match {
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .card-panda {
+    display: flex;
+    flex-direction: column;
+  }
+  .section-panda-details {
+    width: 100%;
+    border-right: none;
+  }
+  .section-potential-match {
+    width: 100%;
+  }
+}
