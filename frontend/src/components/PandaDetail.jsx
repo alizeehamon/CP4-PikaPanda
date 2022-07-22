@@ -51,7 +51,7 @@ export default function PlantDetail() {
                 {panda.id_father ? "Voir le père" : ""}
               </a>
               <a style={{ color: "#e47104" }} href={panda.id_mother}>
-                {panda.id_father ? "Voir la mère" : ""}
+                {panda.id_mother ? "Voir la mère" : ""}
               </a>
             </li>
           </ul>
